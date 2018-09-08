@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.metademy.microservices.dao.UsersDao;
-import com.metademy.microservices.model.User;
+import com.metademy.microservices.model.Request;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User saveUserInformation(User user) {
+	public Request saveUserInformation(Request user) {
 		usersDao.saveUserInformation(user);
 		return user;
 	}

@@ -1,8 +1,8 @@
 package com.metademy.microservices.service;
 
-import com.metademy.microservices.model.User;
+import com.metademy.microservices.model.Request;
 
 public interface UserService {
 
-	public User saveUserInformation(User user);
+	public Request saveUserInformation(Request user);
 }

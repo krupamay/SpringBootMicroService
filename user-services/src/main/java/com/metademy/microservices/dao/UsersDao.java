@@ -1,7 +1,7 @@
 package com.metademy.microservices.dao;
 
-import com.metademy.microservices.model.User;
+import com.metademy.microservices.model.Request;
 
 public interface UsersDao {
-	public User saveUserInformation(User user);
+	public Request saveUserInformation(Request user);
 }

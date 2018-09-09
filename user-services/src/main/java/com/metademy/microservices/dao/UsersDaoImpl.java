@@ -21,21 +21,21 @@ public class UsersDaoImpl implements UsersDao {
 	}
 
 	@Override
-	public Request saveUserInformation(Request user) {
+	public Request saveUserInformation(Request request) {
 		Query query = new Query();
 		query.limit(1);
 		query.with(new Sort(Sort.Direction.DESC, "id"));
-		List<Request> users = mongoTemplate.find(query, Request.class);
-		if (users.isEmpty()) {
-			user.setRequestId("REQ0000001");
-			user.setId(1l);
+		List<Request> requests = mongoTemplate.find(query, Request.class);
+		if (requests.isEmpty()) {
+			request.setRequestId("REQ0000001");
+			request.setId(1l);
 		} else {
-			Long id = users.get(0).getId() + 1;
-			user.setId(id);
-			user.setRequestId("REQ000000" + (id));
+			Long id = requests.get(0).getId() + 1;
+			request.setId(id);
+			request.setRequestId("REQ000000" + (id));
 		}
-		mongoTemplate.save(user);
-		return user;
+		mongoTemplate.save(request);
+		return request;
 	}
 
 }

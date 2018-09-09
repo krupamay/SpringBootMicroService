@@ -33,8 +33,8 @@ public class UsersController {
 	}
 
 	@PostMapping("/saveUserInfo")
-	public ResponseEntity<CustomResponse> create(@RequestBody @Valid Request user) {
-		Request result = userService.saveUserInformation(user);
+	public ResponseEntity<CustomResponse> create(@RequestBody @Valid Request request) {
+		Request result = userService.saveUserInformation(request);
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(result.getUserId())
 				.toUri();
 

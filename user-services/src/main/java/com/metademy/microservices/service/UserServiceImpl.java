@@ -17,9 +17,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public Request saveUserInformation(Request user) {
-		usersDao.saveUserInformation(user);
-		return user;
+	public Request saveUserInformation(Request request) {
+		usersDao.saveUserInformation(request);
+		return request;
 	}
 
 }

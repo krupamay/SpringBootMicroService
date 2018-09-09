@@ -4,5 +4,5 @@ import com.metademy.microservices.model.Request;
 
 public interface UserService {
 
-	public Request saveUserInformation(Request user);
+	public Request saveUserInformation(Request request);
 }
